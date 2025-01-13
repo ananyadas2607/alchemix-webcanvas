@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from ..schemas.template import TemplateRequest, TemplateResponse
-from ..services.anthropic_service import generate_template
+from app.schemas.template import TemplateRequest, TemplateResponse
+from app.services.anthropic_service import generate_template
 import logging
 
 logger = logging.getLogger(__name__)
