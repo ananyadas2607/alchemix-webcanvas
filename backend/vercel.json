@@ -2,27 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.py",
+      "src": "api/index.py",
       "use": "@vercel/python",
       "config": { "runtime": "python3.9" }
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "index.py"
-    },
-    {
-      "src": "/health",
-      "dest": "index.py"
-    },
-    {
       "src": "/(.*)",
-      "dest": "public/$1"
+      "dest": "api/index.py"
     }
   ],
   "env": {
