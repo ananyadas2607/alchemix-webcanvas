@@ -18,7 +18,7 @@ export default function TemplatePage() {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch('http://localhost:8000/api/generate-template', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/generate-template`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
