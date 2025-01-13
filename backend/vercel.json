@@ -5,12 +5,24 @@
       "src": "index.py",
       "use": "@vercel/python",
       "config": { "runtime": "python3.9" }
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "index.py"
+    },
+    {
+      "src": "/health",
+      "dest": "index.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "public/$1"
     }
   ],
   "env": {
